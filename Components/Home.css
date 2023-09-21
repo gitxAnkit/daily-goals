@@ -28,3 +28,6 @@ button{
     background-color: black;
     color:white;
 }
+form button:hover{
+    background-color:rgb(5, 104, 51);
+}
