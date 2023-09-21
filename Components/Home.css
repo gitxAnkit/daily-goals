@@ -9,7 +9,7 @@
 .container > form{
     display:flex;
     flex-direction: column;
-    padding:30px;  
+    
 }
 .container > h1{
     text-align: center;
@@ -19,7 +19,7 @@ input,textarea,button{
     padding:20px;
     border:1px solid rgba(0, 0, 0, 0.25);
     border-radius:5px; 
-    margin:10px;
+    margin:10px 0;
     font-size:1.2rem;
 }
 button{

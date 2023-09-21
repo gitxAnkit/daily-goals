@@ -1,8 +1,14 @@
 import React from 'react'
-
-const Task = () => {
+import '@/Components/Task.css'
+const Task = ({title,description}) => {
   return (
-    <div>Task</div>
+    <div className="task">
+        <div >
+            <p>{title}</p>
+            <span>{description}</span>
+        </div>
+        <button>-</button>
+    </div>
   )
 }
 
