@@ -5,8 +5,8 @@ import Task from './Task'
 
 const Home = () => {
 
+  //get tasks array from the local storage
   const initialArray = localStorage.getItem("tasks")?JSON.parse(localStorage.getItem("tasks")):[];
-
   const [tasks,setTasks]= useState(initialArray);
   const [title,setTitle]= useState("");
   const [description,setDescription]= useState("");
@@ -14,18 +14,16 @@ const Home = () => {
   const submitHandler =(e) =>{
     e.preventDefault();
     setTasks([...tasks, { title,description }]);
+    //empty the title and description field on submit
     setTitle("");
     setDescription("");
   };
 
   const deleteTask = (index) =>{
-
-    const filteredArr =tasks.filter((val,i)=>{
-      return i !==index;
-    });
+    const filteredArr =tasks.filter((val,i) => i !==index );
     setTasks(filteredArr);
   };
-  
+//Whenever tasks array is changed data will be stored in local storage  
   useEffect(() => {
     localStorage.setItem("tasks",JSON.stringify(tasks));
   }, [tasks] );
